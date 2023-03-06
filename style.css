@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+:root {
+    font-size: 10px;
+}
+
+body {
+    background: #d9d9d9;
+    width: 100%;
+    overflow: hidden;
+}
+
+.display-landig {
+    height: 100%;
+    max-width: 1024px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.header-main {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 2rem;
+}
+
+.navgation {
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-box {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.nav-item {
+    font-size: 2rem;
+    list-style: none;
+    color: #514b4b;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    color: #425FAB
+}
+
+.background-style {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/src/imgs/imagem.png);
+    background-size: 60vh;
+    background-repeat: no-repeat;
+    background-position: bottom right 60px;
+}
+
+.main-display {
+    min-height: 100%;
+}
+
+.info-text {
+    width: 50%;
+    min-height: 100%;
+    padding: 6rem;
+    margin-top: 5rem;
+}
+
+.cta {
+    color: #0FE2D6;
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin: auto;
+    text-align: start;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.2rem #000000;
+}
+
+.cta .strong-text {
+    font-size: 4.5rem;
+    background-color: black;
+    padding: 0.4rem 0.6rem;
+    color: white;
+    -webkit-text-stroke: 0rem transparent;
+}
+
+.cta .dot {
+    font-family: serif;
+    font-size: 6rem;
+}
+
+@media screen and (max-width: 830px) {
+
+}
