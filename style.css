@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,30 +15,37 @@
 }
 
 body {
-    background: #d9d9d9;
-    width: 100%;
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
 }
 
 .display-landig {
     height: 100%;
-    max-width: 1024px;
+    width: 100%;
     margin: auto;
 }
 
 .logo {
-    font-size: 2rem;
+    max-width: 10vw;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
 }
 
 .header-main {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     padding: 2rem;
 }
 
 .navgation {
-    width: 90%;
+    width: max-content;
     display: flex;
     align-items: center;
 }
@@ -43,66 +53,149 @@ body {
 .nav-box {
     display: flex;
     flex-direction: row;
-    gap: 1rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
+    height: 100%;
 }
 
 .nav-item {
     font-size: 2rem;
     list-style: none;
     color: #514b4b;
+    width: max-content;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.nav-item.active {
+    color: #0077ff;
+}
+
+.selected-item {
+    height: 3px;
+    position: absolute;
+    display: block;
+    display: flex;
+    transition: all 200ms linear;
+    justify-content: center;
+}
+.selected-item::before {
+    content: '';
+    height: 3px;
+    position: absolute;
+    display: block;
+    background-color: #0077ff;
+    border-radius: 2rem;
+    transform: translateY(0px);
+    width: 50%;
+}
+.selected-item::after {
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 3px;
+    background-color: #0077ff;
+    transform: translateY(6px);
+    border-radius: 2rem;
 }
 
 .nav-item:hover {
     cursor: pointer;
-    color: #425FAB
+    transform: translateY(-5px);
+    text-shadow: 0px 1px 0px black;
 }
 
 .background-style {
     position: absolute;
-    width: 100vw;
+    max-width: 1366px;
+    width: 100%;
     height: 100vh;
     background-image: url(/src/imgs/imagem.png);
-    background-size: 60vh;
+    background-size: 80vh;
     background-repeat: no-repeat;
-    background-position: bottom right 60px;
+    background-position: bottom right 2rem;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -999;
 }
 
 .main-display {
-    min-height: 100%;
+    height: max-content;
+    margin: auto;
 }
 
 .info-text {
     width: 50%;
     min-height: 100%;
-    padding: 6rem;
-    margin-top: 5rem;
+    min-width: 400px;
+    margin-top: 6rem;
+    padding: 0rem 6rem;
 }
+
+.img-box {
+    display: none;
+}
+
+/* .img-box {
+    width: 50%;
+    min-height: 100%;
+    min-width: 400px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+
+.img-box img {
+    width: 100%;
+    height: auto;
+} */
 
 .cta {
-    color: #0FE2D6;
-    font-size: 4rem;
+    color: #0077ff;
+    font-size: 5rem;
     text-transform: uppercase;
     margin: auto;
-    text-align: start;
+    text-align: center;
     font-weight: bolder;
-    -webkit-text-stroke: 0.2rem #000000;
+    font-family: 'Secular One', sans-serif;
+    text-align: center;
 }
 
-.cta .strong-text {
-    font-size: 4.5rem;
-    background-color: black;
-    padding: 0.4rem 0.6rem;
-    color: white;
-    -webkit-text-stroke: 0rem transparent;
-}
 
-.cta .dot {
-    font-family: serif;
-    font-size: 6rem;
-}
-
-@media screen and (max-width: 830px) {
-
+@media screen and (max-width: 960px) {
+    body {
+        overflow-y: scroll;
+    }
+    .background-style {
+        background-image: none;
+    }
+    .main-display {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .info-text {
+        width: 90%;
+        z-index: 10;
+    }
+    .img-box {
+        display: block;
+        width: 50%;
+        padding: 10px;
+        border: solid 1px black;
+        border-radius: 200px 0px 190px 10px;
+        box-shadow: 10px 10px 1px black;
+    }
+    .img-box img {
+        width: 100%;
+        height: auto;
+    }
 }
